@@ -17,10 +17,6 @@ class LinkedList {
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
-        } else if (this.length === 1) {
-            this.head = newNode;
-            this.tail = newNode;
-            this.tail.next = null;
         } else {
             this.tail.next = newNode;
             this.tail = newNode;
@@ -29,20 +25,30 @@ class LinkedList {
         return this;
     }
     pop() {
-        if (!this.head) {
-            return "There's nothing to pop.";
-        } else if (this.length === 1) {
-            return this.head;
-        } else {
-            let popped = this.tail;
-            for (let i = 0; i < bound; i++) {
-                
-            }
-            this.length--;
-            return popped;
-        }
+        if (!this.head) return undefined;
+		let temp = this.head;
+		let pre = this.head;
+		while (temp.next) {
+			pre = temp;
+			temp = temp.next;	
+		}
+		this.tail = pre;
+		this.tail.next = null;
+		this.length--;
+		if (this.length === 0) {
+			this.head = null;
+			this.tail = null;
+		}
+		return temp;
     }
 }
 
-let myLinkedList = new LinkedList(7);
-myLinkedList.push(4);
+let myLinkedList = new LinkedList(1);
+myLinkedList.push(2);
+console.log(myLinkedList);
+myLinkedList.pop();
+console.log(myLinkedList);
+myLinkedList.pop();
+console.log(myLinkedList);
+console.log(myLinkedList.pop());
+console.log(myLinkedList);
