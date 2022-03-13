@@ -7,7 +7,7 @@ Course link:  https://www.udemy.com/course/data-structures-algorithms-javascript
 
 Course content
 14 sections • 102 lectures • 6h 50m total length
-### Introduction #### 3 lectures - 11min
+### Introduction 
 - Introduction 03:48
 - Overview (Please Watch) 03:14
 - Code Editor 04:03
@@ -47,6 +47,8 @@ Course content
 - LL: Remove 04:56
 - LL: Reverse 05:53
 - Quiz: Linked List Big O 3 questions
+
+### Data Structures: Doubly Linked Lists
 - DLL: Constructor 02:55
 - DLL: Push 03:55
 - DLL: Pop 07:07
