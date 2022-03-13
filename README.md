@@ -10,14 +10,12 @@ Course content
 ### Introduction
 - Introduction 03:48
 - Overview (Please Watch) 03:14
-Code Editor
-04:03
-Big O: Intro
-02:57
-Big O: Worst Case
-01:29
-Big O: O(n)
-02:05
+- Code Editor 04:03
+
+### Big O
+- Big O: Intro 02:57
+- Big O: Worst Case 01:29
+- Big O: O(n) 02:05
 Big O: Drop Constants
 01:38
 Big O: O(n^2)
