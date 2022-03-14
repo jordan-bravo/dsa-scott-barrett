@@ -41,14 +41,22 @@ class LinkedList {
 		}
 		return temp;
     }
+	unshift(value) {
+		const newNode = new Node(value);
+		if (!this.head) {
+			this.tail = newNode;
+			this.head = newNode;
+		} else {
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+		this.length++;
+		return this;
+	}
 }
 
-let myLinkedList = new LinkedList(1);
-myLinkedList.push(2);
-console.log(myLinkedList);
-myLinkedList.pop();
-console.log(myLinkedList);
-myLinkedList.pop();
-console.log(myLinkedList);
-console.log(myLinkedList.pop());
+let myLinkedList = new LinkedList(11);
+myLinkedList.push(3);
+myLinkedList.push(23);
+myLinkedList.push(7);
 console.log(myLinkedList);
