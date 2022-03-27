@@ -69,7 +69,24 @@ class DoublyLinkedList {
 		this.length--
 		return temp
 	}
+	get(index) {
+		if (index < 0 || index >= this.length) return undefined
+		let temp = this.head
+		if (index < this.length / 2) {
+			for (let i = 0; i < index; i++) {
+				temp = temp.next
+			}
+		} else {
+			temp = this.tail
+			for (let i = this.length - 1; i > index; i--) {
+				temp = temp.prev
+			}
+		}
+		return temp
+	}
 }
 
-let myDoublyLinkedList = new DoublyLinkedList(3)
-myDoublyLinkedList.unshift(2)
+let myDoublyLinkedList = new DoublyLinkedList(0)
+myDoublyLinkedList.push(1)
+myDoublyLinkedList.push(2)
+myDoublyLinkedList.push(3)
