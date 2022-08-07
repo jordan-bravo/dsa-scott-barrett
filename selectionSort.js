@@ -1,9 +1,17 @@
 function selectionSort(array) {
-	let min = 0
-	for (let i = 0; i < array.length; i++) {
-		if (array[i ])
-			// let min = i
-			// if array[i] < array[i+1] 
-			// then min = i+1
+	let minIndex 
+	for (let i = 0; i < array.length - 1; i++) {
+		minIndex = i
+		for (let j = i + 1; j < array.length; j++) {
+			if (array[j] < array[minIndex]) minIndex = j
+		}
+		if (i !== minIndex) {
+			let temp = array[i]
+			array[i] = array[minIndex]
+			array[minIndex] = temp
+		}
 	}
+	return array
 }
+
+selectionSort([4, 2, 6, 5, 1, 3])
