@@ -64,8 +64,35 @@ class BST {
     }
     return results
   }
-  DFS() {
-
+  DFSPreOrder() {
+    let results = []
+    function traverse(currentNode) {
+      results.push(currentNode.value)
+      if(currentNode.left) traverse(currentNode.left)
+      if(currentNode.right) traverse(currentNode.right)
+    }
+    traverse(this.root)
+    return results
+  }
+  DFSPostOrder() {
+    let results = []
+    function traverse(currentNode) {
+      if(currentNode.left) traverse(currentNode.left)
+      if(currentNode.right) traverse(currentNode.right)
+      results.push(currentNode.value)
+    }
+    traverse(this.root)
+    return results
+  }
+  DFSInOrder() {
+    let results = []
+    function traverse(currentNode) {
+      if(currentNode.left) traverse(currentNode.left)
+      results.push(currentNode.value)
+      if(currentNode.right) traverse(currentNode.right)
+    }
+    traverse(this.root)
+    return results
   }
 }
 
@@ -78,6 +105,11 @@ myTree.insert(27)
 myTree.insert(52)
 myTree.insert(82)
 
-myTree.BFS()
+// DFSPreOrder()
+// [47, 21, 18, 27, 76, 52, 82]
 
-// [47, 21, 76, 18, 27, 82]
+// DFSPostOrder() 
+// [18, 27, 21, 52, 82, 76, 47]
+
+// DFSInOrder()
+// [18, 21, 27, 47, 52, 76, 82]
