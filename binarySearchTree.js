@@ -50,6 +50,23 @@ class BST {
 		}		
 		return currentNode
 	}
+  BFS() {
+    let currentNode = this.root
+    let results = []
+    let queue = []
+    queue.push(currentNode)
+
+    while(queue.length) {
+      currentNode = queue.shift()
+      results.push(currentNode.value)
+      if(currentNode.left) queue.push(currentNode.left)
+      if(currentNode.right) queue.push(currentNode.right)
+    }
+    return results
+  }
+  DFS() {
+
+  }
 }
 
 let myTree = new BST()
@@ -57,7 +74,10 @@ myTree.insert(47)
 myTree.insert(21)
 myTree.insert(76)
 myTree.insert(18)
-
+myTree.insert(27)
 myTree.insert(52)
 myTree.insert(82)
-myTree.minValueNode(myTree.root.right)
+
+myTree.BFS()
+
+// [47, 21, 76, 18, 27, 82]
